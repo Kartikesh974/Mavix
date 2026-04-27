@@ -1,7 +1,11 @@
 from fastapi import FastAPI
+from app.config import settings   # import your config
 
 app = FastAPI()
 
 @app.get("/")
 def home():
-    return {"message": "App is working"}
+    return {
+        "message": "App working",
+        "db": settings.DATABASE_URL
+    }
