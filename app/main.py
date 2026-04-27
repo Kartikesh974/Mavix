@@ -9,3 +9,9 @@ def home():
         "message": "App working",
         "db": settings.DATABASE_URL
     }
+
+@app.get("/email-test")
+def test_email():
+    return {
+        "smtp": settings.SMTP_HOST
+    }
